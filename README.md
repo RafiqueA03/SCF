@@ -1,5 +1,5 @@
 # Color Naming Pipeline
-![Demo](color_names_comparison.gif)
+(color_names_comparison.gif)
 
 A comprehensive pipeline for analyzing color naming patterns across multiple languages and cultures, developed for CHI 2026 submission.
 
