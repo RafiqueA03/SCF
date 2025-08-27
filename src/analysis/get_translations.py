@@ -22,7 +22,6 @@ def load_PCw_from_file(language):
         colour_names: color names as numpy array
     """
     
-    # Construct filename
     language_file = language.replace(' ', '_')
     filename = f'PCw_results/PCw_{language_file}.csv'
     
@@ -30,10 +29,9 @@ def load_PCw_from_file(language):
     PCw_df = pd.read_csv(filename, index_col=0, encoding='utf-8-sig')
     
     # Extract components
-    PCw = PCw_df.values  # numpy array
-    colour_names = PCw_df.columns.values  # color names
+    PCw = PCw_df.values 
+    colour_names = PCw_df.columns.values  
     
-    # Approximate word counts from PCw
     Count_W = np.sum(PCw, axis=0)
     
     return PCw, Count_W, colour_names
@@ -68,7 +66,6 @@ def compute_symmetric_color_translation(PCw_source, PCw_target, color_names_sour
             js_div = jensenshannon(prob_source, prob_target)
             js_divergence_matrix[i_source, i_target] = js_div
     
-    # Convert divergence to similarity (1 - JS divergence)
     similarity_matrix = 1 - js_divergence_matrix
     
     # Source -> Target: maximum along each row
@@ -123,7 +120,7 @@ def compute_symmetric_color_translation(PCw_source, PCw_target, color_names_sour
         'js_divergence': target_js_divergences
     })
     
-    # Add count data if provided
+    # Add count data
     if Count_W_source is not None:
         translation_table_source2target['source_count'] = Count_W_source
     if Count_W_target is not None:
