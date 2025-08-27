@@ -52,7 +52,6 @@ class LanguageModelEvaluator:
         if train_data is not None:
             cam16_data = train_data[['color_id', 'CAM16_J_UCS', 'CAM16_a_UCS', 'CAM16_b_UCS']].copy()
             
-            # Rename columns to match original function's expected names
             cam16_data = cam16_data.rename(columns={
                 'CAM16_J_UCS': 'J_lightness',
                 'CAM16_a_UCS': 'a_prime', 
@@ -61,11 +60,9 @@ class LanguageModelEvaluator:
             
             # Merge with main data on color_id
             self.data = self.data.merge(cam16_data, on='color_id', how='left')
-            # save self.data to a CSV file for debugging
             lang_file_name = language_name.replace(' ', '_')
             self.data.to_csv(f"data/{lang_file_name}_processed.csv", index=False)
-            
-            # Check if merge was successful
+
             missing_cam16 = self.data[['J_lightness', 'a_prime', 'b_prime']].isnull().any(axis=1).sum()
             if missing_cam16 > 0:
                 logging.warning(f"Warning: {missing_cam16} rows missing CAM16-UCS values after merge")
@@ -78,13 +75,11 @@ class LanguageModelEvaluator:
             
             if missing_cols:
                 logging.warning(f"Missing CAM16-UCS coordinates and no train_data provided: {missing_cols}")
-                # You might want to handle this case - either compute from RGB or raise an error
         
         # Get unique color names count
         unique_color_names_count = self.data['color_name'].nunique()
         logging.info(f"Unique color names in {language_name}: {unique_color_names_count}")
         
-        # Note: color_id already exists in the data, no need to recreate it
         # Create unique_colors based on existing color_id and merged CAM16-UCS values
         self.unique_colors = self.data.groupby(['color_id','J_lightness','a_prime','b_prime']).size().reset_index().rename(columns={0:'count'})
         
