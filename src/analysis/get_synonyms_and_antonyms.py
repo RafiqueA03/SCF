@@ -29,7 +29,6 @@ def find_color_synonyms_antonyms_cam16(probabilities_df, extratrees_df, top_k=5,
         avg_j = color_data['J_lightness'].mean()
         avg_a = color_data['a_prime'].mean() 
         avg_b = color_data['b_prime'].mean()
-        #color_centroids[color_name] = (avg_j, avg_a, avg_b)
         color_centroids[color_name.replace('_', ' ')] = (avg_j, avg_a, avg_b)
     
     all_words = probabilities_df.columns.values
@@ -80,7 +79,7 @@ def find_color_synonyms_antonyms_cam16(probabilities_df, extratrees_df, top_k=5,
                 prob1 = probabilities_df[word1].values
                 prob2 = probabilities_df[word2].values
                 js_div = jensenshannon(prob1, prob2)
-                similarity_matrix[i, j] = 1 - js_div  # Store similarity, not JSD
+                similarity_matrix[i, j] = 1 - js_div
     # Create CAM16-UCS ΔE matrix
     words_with_centroids = [word.replace('_', ' ') for word in probabilities_df.columns if word.replace('_', ' ') in color_centroids]
     n_words_with_centroids = len(words_with_centroids)
@@ -109,8 +108,6 @@ def find_color_synonyms_antonyms_cam16(probabilities_df, extratrees_df, top_k=5,
     # ANTONYMS: Use only CAM16-UCS matrix for selection
     for i, target_word in enumerate(all_words):
         target_clean = target_word.replace('_', ' ')
-        
-        # Only process if target word has centroid data
         if target_clean in words_with_centroids:
             
             # Get all CAM16-UCS ΔE distances from matrix
@@ -154,7 +151,6 @@ def process_language_synonyms_antonyms(language_name, top_k=5, delta_e_threshold
         prob_file = f"PCw_results/PCw_{language_file}.csv"
         probabilities_df = pd.read_csv(prob_file, encoding='utf-8-sig', index_col=0)
         
-        # Load extratrees data
         extratrees_file = f"data/{language_file}_processed.csv"
         extratrees_df = pd.read_csv(extratrees_file, encoding='utf-8-sig')
         
@@ -165,7 +161,6 @@ def process_language_synonyms_antonyms(language_name, top_k=5, delta_e_threshold
             top_k=top_k, 
             delta_e_threshold=delta_e_threshold
         )
-        
         
         # Save matrices
         similarity_file = f"synonyms_antonyms/{language_file}_similarity_matrix.csv"
