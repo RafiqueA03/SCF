@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 from spincam.language_model_evaluator import LanguageModelEvaluator 
-from src.utils import generate_test_grid
 import warnings
 warnings.filterwarnings('ignore')
 import argparse
@@ -93,7 +92,6 @@ if __name__ == "__main__":
     
     RANDOM_SEED = 42
     ALL_LANGUAGES = ['American English', 'British English', 'Greek', 'French', 'Himba']
-    #ALL_LANGUAGES = ['British English']
     
     parser = argparse.ArgumentParser(description="Run language-specific model comparison.")
     parser.add_argument('--random_seed', type=int, default=RANDOM_SEED, help="Random seed for reproducibility")
@@ -103,15 +101,6 @@ if __name__ == "__main__":
     data_path = "data/processed_combined_data.csv"
     train_data_path = "data/train_data_with_cam16_ucs.csv"
     test_grid_csv = "data/test_data_cam16_ucs.csv"
-
-
-    # # Check if test grid exists, if not generate it
-    # if not os.path.exists(test_grid_csv):
-    #     logging.info(f"Test grid file {test_grid_csv} not found. Generating test grid...")
-    #     generate_test_grid.getCAM16UCS_samples()
-    #     logging.info("Test grid generated successfully.")
-    # else:
-    #     logging.info(f"Test grid file {test_grid_csv} found.")
         
     # Run comparison
     detailed_results, summary_results = run_language_specific_comparison(

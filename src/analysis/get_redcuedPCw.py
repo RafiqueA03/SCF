@@ -26,9 +26,8 @@ results_file = pd.read_csv("results/language_model_comparison_detailed.csv", enc
 languages = ["American English", "British English", "French", "Greek", "Himba"]
 
 # create dir name PCw_results if it does not exist
-if not os.path.exists("PCw_results"):
-    os.makedirs("PCw_results")
-print(f"Reduced PCw matrices for:")
+if not os.path.exists("results/PCw_results"):
+    os.makedirs("results/PCw_results")
 for language in languages:
     lang_data = filter_by_language(data_org, language)
     lang_results = filter_by_language(results_file, language)
@@ -42,6 +41,6 @@ for language in languages:
     reduced_PCw = PCw[:, np.isin(colour_names, lang_colors)]
     # Save the reduced PCw matrix to a CSV file
     reduced_PCw_df = pd.DataFrame(reduced_PCw, index=colour_IDs, columns=colour_names[np.isin(colour_names, lang_colors)])
-    reduced_PCw_df.to_csv(f"PCw_results/PCw_{language.replace(' ', '_')}.csv", index_label='color_id', encoding='utf-8-sig')
-    print(f"   - {language}: {reduced_PCw.shape}")
+    reduced_PCw_df.to_csv(f"results/PCw_results/PCw_{language.replace(' ', '_')}.csv", index_label='color_id', encoding='utf-8-sig')
+   
 

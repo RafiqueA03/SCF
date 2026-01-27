@@ -1,0 +1,27 @@
+beige: beige
+blanc: blanc
+bleu: bleu
+bleu_clair: bleu clair
+bleu_fonce: bleu foncé
+bleu_gris: bleu gris
+bordeaux: bordeaux
+gris: gris
+gris_fonce: gris foncé
+jaune: jaune
+jaune_pale: jaune pâle
+kaki: kaki
+marron: marron
+marron_clair: marron clair
+noir: noir
+orange: orange
+rose: rosé 
+rose_pale: rose pâle
+rouge: rouge
+turquoise: turquoise
+vert: vert
+vert_clair: vert clair
+vert_fonce: vert foncé 
+vert_kaki: vert kaki
+violet: violet
+violet_clair: violet clair
+violet_fonce: violet foncé

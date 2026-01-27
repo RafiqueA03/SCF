@@ -1,0 +1,32 @@
+aspro: άσπρο
+beraman: βεραμάν
+fouxia: φούξια
+fystiki: φυστικί
+galazio: γαλάζιο
+gkri: γκρι
+kafe: καφέ
+keramidi: κεραμιδί
+kitrino: κίτρινο
+kokkino: κόκκινο
+kyparissi: κυπαρισσί
+lachani: λαχανί
+ladi: λαδί
+leuko: λευκό
+lila: λιλά
+mauro: μαύρο
+melitzani: μελιτζανί
+moustardi: μουσταρδί
+mov: μωβ
+mpez: μπεζ
+mple: μπλε
+mple_skouro: μπλε σκούρο
+mpornto: μπορντό
+ochra: ώχρα
+petrol: πετρόλ
+portokali: πορτοκαλί
+prasino: πράσινο
+prasino_anoichto: πράσινο ανοιχτό
+roz: ροζ
+sapio_mhlo: σάπιο μήλο
+somon: σομόν
+tirkouaz: τιρκουάζ

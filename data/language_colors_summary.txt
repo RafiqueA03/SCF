@@ -1,0 +1,20 @@
+language name: American English
+total colours: 47
+colours names: ['aqua', 'aquamarine', 'beige', 'black', 'blue', 'brown', 'burgundy', 'chartreuse', 'coral', 'cream', 'cyan', 'dark_gray', 'dark_green', 'dark_purple', 'dark_teal', 'forest_green', 'fuchsia', 'gray', 'green', 'lavender', 'light_blue', 'light_green', 'light_purple', 'lilac', 'magenta', 'maroon', 'mauve', 'mustard', 'navy_blue', 'olive', 'olive_green', 'orange', 'pale_yellow', 'peach', 'periwinkle', 'pink', 'purple', 'red', 'rose', 'sage', 'salmon', 'sky_blue', 'tan', 'teal', 'turquoise', 'white', 'yellow']
+
+language name: British English
+total colours: 32
+colours names: ['beige', 'black', 'blue', 'brown', 'cream', 'dark_blue', 'dark_green', 'dark_purple', 'green', 'grey', 'light_blue', 'light_green', 'lilac', 'lime_green', 'magenta', 'maroon', 'mustard', 'ochre', 'olive', 'orange', 'pale_green', 'peach', 'pink', 'purple', 'red', 'salmon', 'salmon_pink', 'teal', 'terracotta', 'turquoise', 'white', 'yellow']
+
+language name: Greek
+total colours: 32
+colours names: [άσπρο, βεραμάν, φούξια, φυστικί, γαλάζιο, γκρι, καφέ, κεραμιδί, κίτρινο, κόκκινο, κυπαρισσί, λαχανί, λαδί, λευκό, λιλά, μαύρο, μελιτζανί, μουσταρδί, μωβ, μπεζ, μπλε, μπλε σκούρο, μπορντό, ώχρα, πετρόλ, πορτοκαλί, πράσινο, πράσινο ανοιχτό, ροζ, σάπιο μήλο, σομόν, τιρκουάζ]
+
+language name: French
+total colours: 27
+colours names: [beige, blanc, bleu, bleu clair, bleu foncé, bleu gris, bordeaux, gris, gris foncé, jaune, jaune pâle, kaki, marron, marron clair, noir, orange, rosé , rose pâle, rouge, turquoise, vert, vert clair, vert foncé , vert kaki, violet, violet clair, violet foncé
+]
+
+language name: Himba
+total colours: 7
+colours names: ['burou', 'dumbu', 'grine', 'serandu', 'vapa', 'vinde', 'zoozu']
