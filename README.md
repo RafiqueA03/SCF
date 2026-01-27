@@ -1,98 +1,108 @@
-# Color Naming Pipeline
-<img src="color_names_comparison.gif" alt="Demo" width="600">
-
-A comprehensive pipeline for analyzing color naming patterns across multiple languages and cultures, developed for CHI 2026 submission.
+# Colour in Translation: Data, Models, and Benchmarking for Cross-Linguistic Colour Naming
 
 ## Overview
 
-This project implements a multi-step pipeline that analyzes color naming behavior across five different languages/cultures:
-- American English
-- British English  
-- French
-- Greek
-- Himba
+This repository contains data, models, and code for our CHI 2026 paper investigating color naming patterns across five languages: British English, American English, French, Greek, and Himba.
 
-The pipeline processes color data through machine learning models, generates visualizations, performs cross-linguistic analysis, and produces interface-ready data.
+**Key Findings:**
+- British English: 32 indispensable colour names
+- American English: 47 indispensable colour names
+- French: 27 indispensable colour names
+- Greek: 32 indispensable colour names
+- Himba: 7 indispensable colour names
 
-## Requirements
+## Contents
 
-- **Python**: 3.10.16
-- **Dependencies**: Install via `pip install -r requirements.txt`
+### Project Structure
 
-## Setup
 
-1. Clone the repository:
+
+## Installation
+
+### Requirements
+
+Python 3.x with dependencies listed in `requirements.txt`
 ```bash
-git clone https://github.com/RafiqueA03/spincam.git
-cd spincam
-```
+# Extract the archive
+unzip SCF.zip
+cd SCF
 
-2. Install dependencies:
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-3. Run the pipeline:
-```bash
-python run_pipeline.py
-```
-
-## Pipeline Overview
-
-The pipeline consists of 10 sequential steps:
-
-1. **Evaluating Multi-language Models** - Trains ML models (Extra Trees, Random Forest, Custom models) and saves best
-2. **Predicting Multi-language Colour Names for J slices** - Generates color predictions across languages
-3. **Generating J slices and Frequency Plots** - Creates visualization plots for each language
-4. **Munsell Colour Analysis (British English)** - Performs specialized color space analysis
-5. **Munsell Visualization** - Generates Munsell array visualizations
-6. **Running Baseline Models** - Calculates minimum and maximum bounds for each language
-7. **Probability Matrix Processing** - Generates reduced PCw matrices
-8. **Synonyms & Antonyms Analysis** - Analyzes semantic relationships in color terms
-9. **Cross-language Translation Analysis** - Performs pairwise translation analysis between all languages
-10. **Interface Data Generation** - Creates final interface-ready data files
-
 ## Usage
 
-### Running the Complete Pipeline
+### Running the Pipeline
+
+The main pipeline script provides 11 different analysis options:
 ```bash
 python run_pipeline.py
 ```
-When prompted, enter:
-- `all` - Run all steps
-- `1,3,5` - Run specific steps (comma-separated)
-- `3-7` - Run range of steps  
-- `skip1,skip3` - Run all except specified steps
 
-### Important Notes
+**Available Pipeline Steps:**
 
-- **First Run**: Step 1 is compulsory on first execution as it trains and saves the models used by subsequent steps
-- **Data**: All required datasets are included in the `data/` folder
-- **Outputs**: Results are automatically saved to the `results/` folder
+1. **Evaluate Multi-language SCF Models** - Evaluate model performance across languages
+2. **Predict Multi-language Colour Names for J slices** - Generate predictions for colour space slices
+3. **Generate J slices** - Create perceptually uniform colour space slices
+4. **Munsell Colour Analysis (British English)** - Analyze Munsell colour system mappings
+5. **Munsell Visualization** - Visualize Munsell colour space
+6. **Run Baseline Models** - Execute comparison baseline models
+7. **Probability Matrix Processing** - Process colour naming probability distributions
+8. **Cross-language Translation Analysis** - Analyze translations 
+9. **Get Focal Colours** - Identify focal colours per language
+10. **Perceptual Metric Evaluation** - Evaluate perceptual colour differences
+11. **Lexical Metric Evaluation** - Evaluate lexical/semantic accuracy
 
-## Project Structure
+**Running Options:**
+```bash
+# Run all steps
+python run_pipeline.py
+# Then enter: all
 
+# Run specific steps (e.g., 1, 3, 5)
+# Enter: 1,3,5
+
+# Run range of steps (e.g., 3 through 7)
+# Enter: 3-7
+
+# Skip specific steps
+# Enter: skip1,skip3
 ```
-spincam/
-├── data/                    # datasets
-├── src/                     # Source code modules
-│   ├── evaluation/         # Model evaluation scripts
-│   ├── prediction/         # Prediction modules  
-│   ├── visualization/      # Plotting and visualization
-│   └── analysis/          # Analysis scripts
-├── run_pipeline.py         # Main pipeline runner
-├── requirements.txt        # Python dependencies
-└── README.md              # This file
-```
 
-## Contributing
+### Output
 
-[To be added]
+Results are saved in the `results/` folder, including:
+- Model evaluation metrics
+- Colour naming predictions
+- Visualization outputs
+- Translation benchmark results
 
 ## Citation
 
-[To be added - CHI 2026 paper details]
+If you use this data or code, please cite:
+
+**[NEED INFO: Add full citation once published]**
+```bibtex
+@inproceedings{yourname2026colour,
+  title={Colour in Translation: Data, Models, and Benchmarking for Cross-Linguistic Colour Naming},
+  author={[Authors]},
+  booktitle={Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+  year={2026},
+  publisher={ACM}
+}
+```
+
+**Data/Code DOI:** [https://doi.org/10.17605/OSF.IO/3BQMP](https://doi.org/10.17605/OSF.IO/3BQMP)
 
 ## License
 
-[To be added]
+CC-BY 4.0
+
+## Contact
+
+**dimitris.mylonas@nulondon.ac.uk, ahmed.rafi@nulondon.ac.uk**
+
+## Acknowledgments
+
+This work is supported by Northeastern University TIER1 FY21 and Leverhulme Trust RPG-2024-096.
