@@ -6,8 +6,7 @@ import pickle
 from sklearn.ensemble import ExtraTreesRegressor, RandomForestRegressor
 from sklearn.model_selection import KFold
 from sklearn.preprocessing import StandardScaler
-from spincam.rotated_extra_trees_regressor import RotatedExtraTreesRegressor
-import colour
+from spincam.rotated_trees_regressor import RotatedTreesRegressor
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -20,14 +19,6 @@ class LanguageModelEvaluator:
         self.color_names = None
         self.unique_colors = None
         self.scaler = StandardScaler()
-        
-        # CAM16 viewing conditions
-        self.viewing_conditions = {
-            "XYZ_w": np.array([95.047, 100.000, 108.883]),
-            "L_A": 64,
-            "Y_b": 20,
-            "surround": colour.VIEWING_CONDITIONS_CAM16['Average']
-        }
     
     def load_and_process_language_data(self, csv_path, language_name, train_data_path=None, use_language_filter=True):
         """Load and process data for a specific language."""
@@ -75,7 +66,6 @@ class LanguageModelEvaluator:
             
             if missing_cols:
                 logging.warning(f"Missing CAM16-UCS coordinates and no train_data provided: {missing_cols}")
-                # You might want to handle this case - either compute from RGB or raise an error
         
         # Get unique color names count
         unique_color_names_count = self.data['color_name'].nunique()
@@ -236,12 +226,12 @@ class LanguageModelEvaluator:
             },
             'Custom Unrotated': {
                 'type': 'custom',
-                'class': RotatedExtraTreesRegressor,
+                'class': RotatedTreesRegressor,
                 'rotation_fraction': 0.0
             },
             'Custom Rotation': {
                 'type': 'custom',
-                'class': RotatedExtraTreesRegressor,
+                'class': RotatedTreesRegressor,
                 'rotation_fraction': 0.667
             }
         }
