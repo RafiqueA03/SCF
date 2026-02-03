@@ -3,8 +3,8 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.preprocessing import StandardScaler
 
 
-class RotatedExtraTreesRegressor:
-    """Custom ExtraTreesRegressor with configurable rotation of 3D decision space."""
+class RotatedTreesRegressor:
+    """Custom TreesRegressor with configurable rotation of 3D decision space."""
     
     def __init__(self, n_estimators=300, max_depth=16, min_samples_split=4, 
                  min_samples_leaf=1, max_features=1.0, random_state=42, n_jobs=-1,
