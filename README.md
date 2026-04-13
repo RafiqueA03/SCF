@@ -1,4 +1,4 @@
-# SCF: Colour in Translation
+# SCF: Colour in Translation Data Models and Benchmarking for Cross Linguistic Colour Naming
 
 **Data, Models, and Benchmarking for Cross-Linguistic Colour Naming**
 
@@ -109,17 +109,19 @@ Results are saved to:
 [Colour_in_Translation_Data_Models_and_Benchmarking_for_Cross_Linguistic_Colour_Naming](https://nul.repository.guildhe.ac.uk/id/eprint/2723/1/Colour_in_Translation_Data_Models_and_Benchmarking_for_Cross_Linguistic_Colour_Naming.pdf)
 
 ## Citation
-
 If you use this code in your research, please cite our paper:
 
 ```bibtex
-@article{scf2024,
+@inproceedings{scf2026,
   title={Colour in Translation: Data, Models, and Benchmarking for Cross-Linguistic Colour Naming},
-  author={[Authors]},
-  journal={[Journal]},
-  year={2024}
+  author={Rafique, Ahmed and others},
+  booktitle={Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+  year={2026},
+  note={To appear. Preprint: https://nul.repository.guildhe.ac.uk/id/eprint/2723/}
 }
 ```
+
+> ⚠️ CHI 2026 proceedings are not yet public. This citation will be updated with the full DOI and page numbers upon publication.
 
 ## License
 
