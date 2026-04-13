@@ -105,6 +105,9 @@ Results are saved to:
 - `models/` - Trained model files
 - `pipeline.log` - Execution logs
 
+## Paper Link
+[Colour_in_Translation_Data_Models_and_Benchmarking_for_Cross_Linguistic_Colour_Naming](https://nul.repository.guildhe.ac.uk/id/eprint/2723/1/Colour_in_Translation_Data_Models_and_Benchmarking_for_Cross_Linguistic_Colour_Naming.pdf)
+
 ## Citation
 
 If you use this code in your research, please cite our paper:
